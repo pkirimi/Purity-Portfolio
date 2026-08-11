@@ -1,1 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: Arial, sans-serif;
+    background: #FAF9F6;
+    color: #171717;
+    line-height: 1.6;
+}
+
+header {
+    padding: 24px 6%;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #171717;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: #171717;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.hero {
+    max-width: 900px;
+    margin: 140px auto;
+    padding: 0 6%;
+}
+
+.eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1;
+    max-width: 850px;
+    margin-bottom: 32px;
+}
+
+.intro {
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 32px;
+}
+
+.button {
+    display: inline-block;
+    background: #171717;
+    color: white;
+    padding: 14px 24px;
+    text-decoration: none;
+}
+
+footer {
+    padding: 40px 6%;
+    color: #777;
+}
+
+@media (max-width: 700px) {
+
+    nav {
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    .hero {
+        margin: 90px auto;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+}
