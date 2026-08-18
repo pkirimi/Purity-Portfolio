@@ -936,3 +936,162 @@ footer {
     }
 
 }
+
+/* ================================
+   PROJECTS PAGE
+   ================================ */
+
+.project-grid {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 30px 120px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    position: relative;
+
+    min-height: 390px;
+    padding: 35px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    background: var(--card-hover);
+    border-color: var(--blue);
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 70px;
+
+    color: var(--blue);
+
+    font-family: "Courier New", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+}
+
+.project-card h2 {
+    margin: 0 0 18px;
+
+    font-size: 2rem;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+}
+
+.project-card > p {
+    max-width: 520px;
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+.project-card .tags {
+    margin-top: 25px;
+}
+
+.project-card .text-link {
+    margin-top: auto;
+    padding-top: 35px;
+
+    color: var(--blue);
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: opacity 0.2s ease;
+}
+
+.project-card .text-link:hover {
+    opacity: 0.7;
+}
+
+.project-card.coming-soon {
+    opacity: 0.65;
+}
+
+.project-card.coming-soon:hover {
+    opacity: 1;
+}
+
+
+/* PROJECT TAGS */
+
+.project-card .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-card .tags span {
+    padding: 7px 11px;
+
+    border: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-family: "Courier New", monospace;
+    font-size: 0.68rem;
+}
+
+
+/* PROJECT PAGE RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        padding-bottom: 80px;
+    }
+
+    .project-card {
+        min-height: 350px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .project-grid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .project-card {
+        padding: 25px;
+        min-height: 330px;
+    }
+
+    .project-top {
+        margin-bottom: 50px;
+    }
+
+    .project-card h2 {
+        font-size: 1.7rem;
+    }
+
+}
