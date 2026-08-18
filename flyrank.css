@@ -1,0 +1,531 @@
+:root {
+    --fly-bg: #070b13;
+    --fly-bg-soft: #0c1220;
+    --fly-card: #101827;
+    --fly-text: #f2f5f9;
+    --fly-muted: #91a0b5;
+    --fly-blue: #4da3ff;
+    --fly-border: #1b2738;
+    --fly-max: 1180px;
+}
+
+body {
+    background: var(--fly-bg);
+    color: var(--fly-text);
+}
+
+main {
+    overflow: hidden;
+}
+
+.fly-container {
+    width: min(var(--fly-max), calc(100% - 60px));
+    margin: 0 auto;
+}
+
+
+/* HERO */
+
+.fly-hero {
+    padding: 135px 0 100px;
+}
+
+.fly-eyebrow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    margin-bottom: 35px;
+
+    color: var(--fly-blue);
+
+    font-family: "Courier New", monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+}
+
+.fly-hero h1 {
+    margin: 0;
+
+    font-size: clamp(5rem, 12vw, 10rem);
+    line-height: 0.82;
+    letter-spacing: -0.085em;
+}
+
+.fly-hero h2 {
+    max-width: 900px;
+
+    margin: 45px 0 30px;
+
+    color: #aeb9c9;
+
+    font-size: clamp(2rem, 4.5vw, 4.2rem);
+    font-weight: 500;
+
+    line-height: 1.03;
+    letter-spacing: -0.055em;
+}
+
+.fly-lead {
+    max-width: 720px;
+
+    color: var(--fly-muted);
+
+    font-size: 1.05rem;
+    line-height: 1.85;
+}
+
+.fly-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-top: 75px;
+
+    border-top: 1px solid var(--fly-border);
+    border-left: 1px solid var(--fly-border);
+}
+
+.fly-meta > div {
+    min-height: 120px;
+
+    padding: 25px;
+
+    border-right: 1px solid var(--fly-border);
+    border-bottom: 1px solid var(--fly-border);
+}
+
+.fly-meta span,
+.fly-highlight span,
+.fly-definition span,
+.fly-data-card > span,
+.metric-grid span,
+.fly-result-note > span,
+.fly-section .fly-title > p,
+.fly-next > .fly-container > p {
+    display: block;
+
+    color: var(--fly-blue);
+
+    font-family: "Courier New", monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 0.11em;
+}
+
+.fly-meta strong {
+    display: block;
+
+    margin-top: 12px;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+
+/* SECTIONS */
+
+.fly-section {
+    padding: 120px 0;
+
+    border-top: 1px solid var(--fly-border);
+}
+
+.fly-dark {
+    background: var(--fly-bg-soft);
+}
+
+.fly-number {
+    margin-bottom: 55px;
+
+    color: var(--fly-blue);
+
+    font-family: "Courier New", monospace;
+    font-size: 0.72rem;
+}
+
+.fly-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+
+    gap: 100px;
+}
+
+.fly-title h2 {
+    max-width: 520px;
+
+    margin: 18px 0 0;
+
+    font-size: clamp(2.8rem, 5vw, 5rem);
+
+    line-height: 0.95;
+    letter-spacing: -0.065em;
+}
+
+.fly-content {
+    max-width: 720px;
+}
+
+.fly-content > p {
+    margin: 0 0 25px;
+
+    color: var(--fly-muted);
+
+    font-size: 1.03rem;
+    line-height: 1.85;
+}
+
+code {
+    padding: 3px 6px;
+
+    background: #111d2d;
+
+    color: #8fc7ff;
+
+    font-family: "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+
+/* HIGHLIGHT */
+
+.fly-highlight {
+    margin-top: 50px;
+
+    padding: 28px;
+
+    border-left: 2px solid var(--fly-blue);
+
+    background: var(--fly-card);
+}
+
+.fly-highlight strong {
+    display: block;
+
+    margin-top: 12px;
+
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+
+/* DEFINITIONS */
+
+.fly-definition {
+    margin-top: 50px;
+
+    border-top: 1px solid var(--fly-border);
+}
+
+.fly-definition > div {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid var(--fly-border);
+}
+
+.fly-definition strong {
+    font-weight: 500;
+}
+
+
+/* DATA */
+
+.fly-data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 50px;
+
+    border-top: 1px solid var(--fly-border);
+    border-left: 1px solid var(--fly-border);
+}
+
+.fly-data-card {
+    min-height: 180px;
+
+    padding: 25px;
+
+    border-right: 1px solid var(--fly-border);
+    border-bottom: 1px solid var(--fly-border);
+}
+
+.fly-data-card code {
+    display: block;
+
+    margin-top: 25px;
+
+    padding: 0;
+
+    background: none;
+
+    color: var(--fly-muted);
+
+    line-height: 1.8;
+}
+
+
+/* MODEL */
+
+.fly-model-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 50px;
+
+    border-top: 1px solid var(--fly-border);
+    border-left: 1px solid var(--fly-border);
+}
+
+.fly-model-card > div {
+    min-height: 130px;
+
+    padding: 25px;
+
+    border-right: 1px solid var(--fly-border);
+    border-bottom: 1px solid var(--fly-border);
+}
+
+.fly-model-card span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--fly-muted);
+
+    font-family: "Courier New", monospace;
+    font-size: 0.65rem;
+}
+
+.fly-model-card strong {
+    font-size: 1rem;
+}
+
+
+/* METRICS */
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    margin: 50px 0;
+
+    border-top: 1px solid var(--fly-border);
+    border-left: 1px solid var(--fly-border);
+}
+
+.metric-grid > div {
+    padding: 22px 15px;
+
+    border-right: 1px solid var(--fly-border);
+    border-bottom: 1px solid var(--fly-border);
+}
+
+.metric-grid strong {
+    display: block;
+
+    margin-top: 15px;
+
+    font-size: 1.6rem;
+}
+
+.metric-highlight strong {
+    color: #72c8a3;
+}
+
+.metric-warning strong {
+    color: #ff9d7a;
+}
+
+.fly-result-note {
+    padding: 28px;
+
+    background: var(--fly-card);
+
+    border: 1px solid var(--fly-border);
+}
+
+.fly-result-note p {
+    margin: 12px 0 0;
+
+    color: var(--fly-muted);
+
+    line-height: 1.75;
+}
+
+
+/* CONFUSION MATRIX */
+
+.confusion-matrix {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    max-width: 550px;
+
+    margin: 50px 0;
+
+    border-top: 1px solid var(--fly-border);
+    border-left: 1px solid var(--fly-border);
+}
+
+.matrix-label,
+.matrix-cell {
+    min-height: 90px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-right: 1px solid var(--fly-border);
+    border-bottom: 1px solid var(--fly-border);
+}
+
+.matrix-label {
+    color: var(--fly-muted);
+
+    font-family: "Courier New", monospace;
+    font-size: 0.7rem;
+}
+
+.matrix-cell {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.matrix-cell.error {
+    color: #ff9d7a;
+    background: rgba(255, 157, 122, 0.06);
+}
+
+
+/* COEFFICIENTS */
+
+.coefficient-list {
+    margin-top: 50px;
+
+    border-top: 1px solid var(--fly-border);
+}
+
+.coefficient-list > div {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid var(--fly-border);
+}
+
+.coefficient-list span {
+    color: var(--fly-text);
+
+    font-family: "Courier New", monospace;
+    font-size: 0.8rem;
+}
+
+.coefficient-list strong {
+    color: var(--fly-blue);
+
+    font-family: "Courier New", monospace;
+}
+
+.small-note {
+    font-size: 0.8rem !important;
+}
+
+
+/* NEXT */
+
+.fly-next {
+    padding: 120px 0;
+
+    background: #0a1422;
+
+    border-top: 1px solid var(--fly-border);
+}
+
+.fly-next h2 {
+    margin: 20px 0 35px;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+
+    line-height: 0.9;
+    letter-spacing: -0.07em;
+}
+
+.fly-next a {
+    color: var(--fly-blue);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .fly-meta {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .fly-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .metric-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .fly-container {
+        width: min(100% - 40px, var(--fly-max));
+    }
+
+    .fly-hero {
+        padding: 90px 0 70px;
+    }
+
+    .fly-hero h1 {
+        font-size: clamp(4rem, 18vw, 6rem);
+    }
+
+    .fly-hero h2 {
+        font-size: 2rem;
+    }
+
+    .fly-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .fly-section {
+        padding: 80px 0;
+    }
+
+    .fly-data-grid,
+    .fly-model-card {
+        grid-template-columns: 1fr;
+    }
+
+    .metric-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .metric-grid > div:last-child {
+        grid-column: span 2;
+    }
+
+}
