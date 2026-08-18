@@ -1,0 +1,251 @@
+.case-study-hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 150px 30px 100px;
+}
+
+.case-study-label {
+    color: #4DA3FF;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+}
+
+.case-study-hero h1 {
+    font-size: clamp(4rem, 8vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.07em;
+    margin: 30px 0;
+}
+
+.case-study-hero h1 span {
+    display: block;
+    color: #8F9BAD;
+    font-size: 0.48em;
+    line-height: 1.05;
+    max-width: 850px;
+    margin-top: 25px;
+}
+
+.case-study-lead {
+    max-width: 750px;
+    color: #8F9BAD;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.case-meta-grid {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #1B2738;
+    border-left: 1px solid #1B2738;
+}
+
+.case-meta-grid div {
+    padding: 25px;
+    border-right: 1px solid #1B2738;
+    border-bottom: 1px solid #1B2738;
+}
+
+.case-meta-grid small {
+    display: block;
+    color: #4DA3FF;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 10px;
+}
+
+.case-meta-grid strong {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.case-study-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 110px 30px;
+    border-top: 1px solid #1B2738;
+}
+
+.dark-section,
+.outcome-section {
+    max-width: none;
+    background: #0C1220;
+    padding-left: max(30px, calc((100vw - 1200px) / 2 + 30px));
+    padding-right: max(30px, calc((100vw - 1200px) / 2 + 30px));
+}
+
+.outcome-section {
+    background: #091321;
+}
+
+.case-section-number {
+    color: #4DA3FF;
+    font-family: "Courier New", monospace;
+    font-size: 0.8rem;
+    margin-bottom: 50px;
+}
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 100px;
+}
+
+.case-study-grid h2 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+
+.case-prose {
+    max-width: 700px;
+}
+
+.case-prose p {
+    color: #8F9BAD;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.case-prose h3 {
+    font-size: 1.35rem;
+    margin: 45px 0 12px;
+}
+
+.feature-list,
+.tech-stack {
+    margin-top: 45px;
+    border-top: 1px solid #1B2738;
+}
+
+.feature-list div,
+.tech-stack div {
+    padding: 22px 0;
+    border-bottom: 1px solid #1B2738;
+}
+
+.feature-list span,
+.tech-stack span {
+    color: #8F9BAD;
+    font-size: 0.9rem;
+}
+
+.tech-stack div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tech-stack strong {
+    text-align: right;
+}
+
+.hercycle-gallery {
+    display: none;
+}
+
+.proof-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 120px 30px;
+}
+
+.proof-section > h2 {
+    max-width: 700px;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+    margin-bottom: 70px;
+}
+
+.proof-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #1B2738;
+    border-left: 1px solid #1B2738;
+}
+
+.proof-grid div {
+    padding: 35px;
+    min-height: 230px;
+    border-right: 1px solid #1B2738;
+    border-bottom: 1px solid #1B2738;
+}
+
+.proof-grid span {
+    color: #4DA3FF;
+    font-family: "Courier New", monospace;
+}
+
+.proof-grid h3 {
+    margin: 55px 0 12px;
+    font-size: 1.3rem;
+}
+
+.proof-grid p {
+    color: #8F9BAD;
+}
+
+.case-links-section {
+    text-align: center;
+    padding: 130px 30px;
+    border-top: 1px solid #1B2738;
+}
+
+.case-links-section h2 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    letter-spacing: -0.06em;
+    margin: 20px 0 40px;
+}
+
+.case-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+@media (max-width: 800px) {
+    .case-meta-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .case-study-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .proof-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-stack div {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .tech-stack strong {
+        text-align: left;
+    }
+}
+
+@media (max-width: 500px) {
+    .case-study-hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .case-meta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study-section,
+    .proof-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .case-links {
+        flex-direction: column;
+    }
+}
