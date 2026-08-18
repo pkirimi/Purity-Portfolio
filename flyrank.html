@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Intelligence | FlyRank Case Study | Purity Kirimi</title>
+
+    <meta
+        name="description"
+        content="Machine learning case study by Purity Kirimi on building a ranked content review queue from search intelligence data."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="flyrank.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            PK<span>.</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <a href="contact.html" class="nav-cta">
+            Let's talk
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="fly-hero">
+
+    <div class="fly-container">
+
+        <div class="fly-eyebrow">
+            MACHINE LEARNING
+            <span>•</span>
+            SEARCH INTELLIGENCE
+            <span>•</span>
+            FLYRANK
+        </div>
+
+        <h1>
+            Search<br>
+            Intelligence
+        </h1>
+
+        <h2>
+            Building a ranked content review queue with machine learning.
+        </h2>
+
+        <p class="fly-lead">
+            A machine learning project exploring how search intelligence
+            signals can be used to identify content that may need review
+            and prioritise what should be looked at first.
+        </p>
+
+        <div class="fly-meta">
+
+            <div>
+                <span>ROLE</span>
+                <strong>Machine Learning Intern</strong>
+            </div>
+
+            <div>
+                <span>TASK</span>
+                <strong>Content Review Ranking</strong>
+            </div>
+
+            <div>
+                <span>DATA</span>
+                <strong>30,000 rows</strong>
+            </div>
+
+            <div>
+                <span>MODEL</span>
+                <strong>Logistic Regression</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OVERVIEW -->
+
+<section class="fly-section fly-dark">
+
+    <div class="fly-container">
+
+        <div class="fly-number">
+            01
+        </div>
+
+        <div class="fly-grid">
+
+            <div class="fly-title">
+
+                <p>THE PROBLEM</p>
+
+                <h2>
+                    Which content
+                    deserves attention?
+                </h2>
+
+            </div>
+
+            <div class="fly-content">
+
+                <p>
+                    Search intelligence data can contain a large number
+                    of content items. Reviewing every page manually is
+                    inefficient, so the goal was to create a structured
+                    way to surface content that may need attention.
+                </p>
+
+                <p>
+                    I approached the problem as a decision support task:
+                    use observable search performance signals to help
+                    prioritise content for human review.
+                </p>
+
+                <div class="fly-highlight">
+
+                    <span>OBJECTIVE</span>
+
+                    <strong>
+                        Produce an ordered review queue rather than
+                        treating every content item equally.
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FRAMING -->
+
+<section class="fly-section">
+
+    <div class="fly-container">
+
+        <div class="fly-number">
+            02
+        </div>
+
+        <div class="fly-grid">
+
+            <div class="fly-title">
+
+                <p>PROBLEM FRAMING</p>
+
+                <h2>
+                    Start with the
+                    decision, not the model.
+                </h2>
+
+            </div>
+
+            <div class="fly-content">
+
+                <p>
+                    There was no direct labelled outcome describing
+                    whether a piece of content actually required review.
+                    I therefore used <code>is_declining</code> as a
+                    proxy target for identifying potentially declining
+                    content.
+                </p>
+
+                <p>
+                    This distinction matters. The model was not being
+                    presented as a definitive measure of content quality.
+                    It was being evaluated as a mechanism for supporting
+                    a review decision.
+                </p>
+
+                <div class="fly-definition">
+
+                    <div>
+                        <span>TASK</span>
+                        <strong>Binary classification</strong>
+                    </div>
+
+                    <div>
+                        <span>TARGET</span>
+                        <strong>is_declining</strong>
+                    </div>
+
+                    <div>
+                        <span>USE</span>
+                        <strong>Decision support</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DATA -->
+
+<section class="fly-section fly-dark">
+
+    <div class="fly-container">
+
+        <div class="fly-number">
+            03
+        </div>
+
+        <div class="fly-grid">
+
+            <div class="fly-title">
+
+                <p>DATA CONTRACT</p>
+
+                <h2>
+                    Separate signal
+                    from context.
+                </h2>
+
+            </div>
+
+            <div class="fly-content">
+
+                <p>
+                    Before modelling, I separated the available fields
+                    into features, target, context and excluded fields.
+                    This helped make the modelling setup explicit and
+                    reduced the risk of using information that would not
+                    be available at prediction time.
+                </p>
+
+                <div class="fly-data-grid">
+
+                    <div class="fly-data-card">
+
+                        <span>FEATURES</span>
+
+                        <code>
+                            impressions_90d<br>
+                            clicks_90d<br>
+                            ctr<br>
+                            avg_position<br>
+                            sessions_90d<br>
+                            engagement_rate
+                        </code>
+
+                    </div>
+
+                    <div class="fly-data-card">
+
+                        <span>LABEL / PROXY</span>
+
+                        <code>
+                            is_declining
+                        </code>
+
+                    </div>
+
+                    <div class="fly-data-card">
+
+                        <span>CONTEXT</span>
+
+                        <code>
+                            client_id<br>
+                            content_id<br>
+                            report_date
+                        </code>
+
+                    </div>
+
+                    <div class="fly-data-card">
+
+                        <span>EXCLUDED</span>
+
+                        <code>
+                            Future performance<br>
+                            Label derived fields<br>
+                            Decision scores
+                        </code>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MODEL -->
+
+<section class="fly-section">
+
+    <div class="fly-container">
+
+        <div class="fly-number">
+            04
+        </div>
+
+        <div class="fly-grid">
+
+            <div class="fly-title">
+
+                <p>MODEL</p>
+
+                <h2>
+                    A simple model
+                    with an honest baseline.
+                </h2>
+
+            </div>
+
+            <div class="fly-content">
+
+                <p>
+                    I chose Logistic Regression as the modelling approach
+                    because it provides a simple and interpretable
+                    classification baseline. The goal was not to maximise
+                    complexity, but to establish whether the selected
+                    signals provided useful predictive information.
+                </p>
+
+                <div class="fly-model-card">
+
+                    <div>
+                        <span>TRAINING ROWS</span>
+                        <strong>24,000</strong>
+                    </div>
+
+                    <div>
+                        <span>TEST ROWS</span>
+                        <strong>6,000</strong>
+                    </div>
+
+                    <div>
+                        <span>MODEL</span>
+                        <strong>Logistic Regression</strong>
+                    </div>
+
+                    <div>
+                        <span>TARGET</span>
+                        <strong>is_declining</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RESULTS -->
+
+<section class="fly-section fly-dark">
+
+    <div class="fly-container">
+
+        <div class="fly-number">
+            05
+        </div>
+
+        <div class="fly-grid">
+
+            <div class="fly-title">
+
+                <p>RESULTS</p>
+
+                <h2>
+                    The numbers
+                    tell a mixed story.
+                </h2>
+
+            </div>
+
+            <div class="fly-content">
+
+                <p>
+                    On the test set, the model achieved high recall for
+                    the declining class, but its overall ability to
+                    distinguish between the two classes was weak.
+                </p>
+
+                <div class="metric-grid">
+
+                    <div>
+                        <span>ACCURACY</span>
+                        <strong>0.565</strong>
+                    </div>
+
+                    <div>
+                        <span>PRECISION</span>
+                        <strong>0.558</strong>
+                    </div>
+
+                    <div class="metric-highlight">
+                        <span>RECALL</span>
+                        <strong>0.946</strong>
+                    </div>
+
+                    <div>
+                        <span>F1</span>
+                        <strong>0.702</strong>
+                    </div>
+
+                    <div class="metric-warning">
+                        <span>ROC AUC</span>
+                        <strong>0.515</strong>
+                    </div>
+
+                </div>
+
+                <div class="fly-result-note">
+
+                    <span>INTERPRETATION</span>
+
+                    <p>
+                        The model captured most of the declining cases,
+                        reflected by the 0.946 recall. However, the
+                        ROC AUC of 0.515 indicates that the model had
+                        very limited ability to separate declining from
+                        non declining content across thresholds.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONFUSION MATRIX -->
+
+<section class="fly-section">
+
+    <div class="fly-container">
+
+        <div class="fly-number">
+            06
+        </div>
+
+        <div class="fly-grid">
+
+            <div class="fly-title">
+
+                <p>ERROR ANALYSIS</p>
+
+                <h2>
+                    Where did
+                    it go wrong?
+                </h2>
+
+            </div>
+
+            <div class="fly-content">
+
+                <p>
+                    The confusion matrix showed that the model identified
+                    many of the declining cases, but also classified a
+                    large number of non declining cases as declining.
+                </p>
+
+                <div class="confusion-matrix">
+
+                    <div class="matrix-label"></div>
+
+                    <div class="matrix-label">
+                        Predicted 0
+                    </div>
+
+                    <div class="matrix-label">
+                        Predicted 1
+                    </div>
+
+
+                    <div class="matrix-label">
+                        Actual 0
+                    </div>
+
+                    <div class="matrix-cell">
+                        316
+                    </div>
+
+                    <div class="matrix-cell error">
+                        2,432
+                    </div>
+
+
+                    <div class="matrix-label">
+                        Actual 1
+                    </div>
+
+                    <div class="matrix-cell">
+                        176
+                    </div>
+
+                    <div class="matrix-cell">
+                        3,076
+                    </div>
+
+                </div>
+
+                <p>
+                    The large number of false positives is important.
+                    A review queue built directly from this behaviour
+                    could send too much non declining content to human
+                    reviewers.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="fly-section fly-dark">
+
+    <div class="fly-container">
+
+        <div class="fly-number">
+            07
+        </div>
+
+        <div class="fly-grid">
+
+            <div class="fly-title">
+
+                <p>FEATURE INTERPRETATION</p>
+
+                <h2>
+                    What did the
+                    model lean on?
+                </h2>
+
+            </div>
+
+            <div class="fly-content">
+
+                <p>
+                    Logistic Regression also provided an interpretable
+                    view of the relationship between the selected
+                    features and the predicted class.
+                </p>
+
+                <div class="coefficient-list">
+
+                    <div>
+                        <span>CTR</span>
+                        <strong>-0.182</strong>
+                    </div>
+
+                    <div>
+                        <span>CLICKS_90D</span>
+                        <strong>-0.171</strong>
+                    </div>
+
+                    <div>
+                        <span>AVG_POSITION</span>
+                        <strong>-0.087</strong>
+                    </div>
+
+                    <div>
+                        <span>SESSIONS_90D</span>
+                        <strong>0.055</strong>
+                    </div>
+
+                    <div>
+                        <span>IMPRESSIONS_90D</span>
+                        <strong>0.016</strong>
+                    </div>
+
+                    <div>
+                        <span>ENGAGEMENT_RATE</span>
+                        <strong>-0.001</strong>
+                    </div>
+
+                </div>
+
+                <p class="small-note">
+                    Coefficients are interpreted directionally within
+                    the fitted Logistic Regression model and should not
+                    be treated as causal effects.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LEARNING -->
+
+<section class="fly-section">
+
+    <div class="fly-container">
+
+        <div class="fly-number">
+            08
+        </div>
+
+        <div class="fly-grid">
+
+            <div class="fly-title">
+
+                <p>WHAT I LEARNED</p>
+
+                <h2>
+                    A reasonable
+                    score is not enough.
+                </h2>
+
+            </div>
+
+            <div class="fly-content">
+
+                <p>
+                    The most useful part of the exercise was not simply
+                    obtaining a model score. It was seeing how different
+                    metrics revealed different aspects of model behaviour.
+                </p>
+
+                <p>
+                    A recall of 0.946 initially looks strong, but the
+                    confusion matrix and ROC AUC showed why it would be
+                    risky to judge the model using recall alone.
+                </p>
+
+                <p>
+                    This reinforced an important ML engineering principle:
+                    the right model is not necessarily the most complex
+                    model. It is the model whose behaviour is useful for
+                    the decision it is supposed to support.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NEXT -->
+
+<section class="fly-next">
+
+    <div class="fly-container">
+
+        <p>
+            NEXT
+        </p>
+
+        <h2>
+            Diabetes Risk Prediction
+        </h2>
+
+        <a href="projects.html">
+            View projects →
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <a href="index.html" class="logo">
+                PK<span>.</span>
+            </a>
+
+            <p>
+                AI Engineer building practical intelligent systems.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a
+                href="https://www.linkedin.com/in/purity-karwitha-9357a41b6"
+                target="_blank"
+                rel="noopener"
+            >
+                LinkedIn
+            </a>
+
+            <a
+                href="https://github.com/pkirimi"
+                target="_blank"
+                rel="noopener"
+            >
+                GitHub
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 Purity Kirimi. Built with HTML & CSS.
+    </p>
+
+</footer>
+
+</body>
+</html>
