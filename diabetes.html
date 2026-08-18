@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Diabetes Risk Prediction | Purity Kirimi</title>
+
+    <meta
+        name="description"
+        content="Machine learning case study exploring diabetes risk prediction using classification models."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="diabetes.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            PK<span>.</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <a href="contact.html" class="nav-cta">
+            Let's talk
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+<section class="ml-hero">
+
+    <div class="ml-container">
+
+        <div class="ml-eyebrow">
+            MACHINE LEARNING
+            <span>•</span>
+            CLASSIFICATION
+            <span>•</span>
+            HEALTHCARE
+        </div>
+
+        <h1>
+            Diabetes<br>
+            Risk Prediction
+        </h1>
+
+        <h2>
+            Exploring whether patient-level measurements can support
+            diabetes risk classification.
+        </h2>
+
+        <p class="ml-lead">
+            A supervised machine learning project using the Pima Indians
+            Diabetes dataset to explore classification, preprocessing,
+            model comparison and evaluation.
+        </p>
+
+        <div class="ml-meta">
+
+            <div>
+                <span>TYPE</span>
+                <strong>Binary Classification</strong>
+            </div>
+
+            <div>
+                <span>MODELS</span>
+                <strong>Logistic Regression · Random Forest</strong>
+            </div>
+
+            <div>
+                <span>DATASET</span>
+                <strong>Pima Indians Diabetes</strong>
+            </div>
+
+            <div>
+                <span>TEST SET</span>
+                <strong>154 rows</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="ml-section ml-dark">
+
+    <div class="ml-container">
+
+        <div class="ml-number">01</div>
+
+        <div class="ml-grid">
+
+            <div class="ml-title">
+
+                <p>THE QUESTION</p>
+
+                <h2>
+                    Can patient measurements
+                    help classify diabetes risk?
+                </h2>
+
+            </div>
+
+            <div class="ml-content">
+
+                <p>
+                    The project explored whether routinely recorded
+                    patient measurements could be used to predict
+                    whether an individual belongs to the diabetes-positive
+                    or diabetes-negative class.
+                </p>
+
+                <p>
+                    I treated the task as a supervised binary
+                    classification problem and compared different
+                    modelling approaches rather than assuming one model
+                    would automatically be best.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="ml-section">
+
+    <div class="ml-container">
+
+        <div class="ml-number">02</div>
+
+        <div class="ml-grid">
+
+            <div class="ml-title">
+
+                <p>DATA</p>
+
+                <h2>
+                    Understand the
+                    inputs before modelling.
+                </h2>
+
+            </div>
+
+            <div class="ml-content">
+
+                <p>
+                    The dataset contained clinical and demographic
+                    measurements commonly used in the Pima Indians
+                    Diabetes dataset.
+                </p>
+
+                <div class="data-list">
+
+                    <div>Pregnancies</div>
+                    <div>Glucose</div>
+                    <div>Blood Pressure</div>
+                    <div>Skin Thickness</div>
+                    <div>Insulin</div>
+                    <div>BMI</div>
+                    <div>Diabetes Pedigree Function</div>
+                    <div>Age</div>
+
+                </div>
+
+                <p>
+                    Missing or zero-valued measurements were an important
+                    consideration during exploration because they can
+                    affect model behaviour if treated as ordinary values.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="ml-section ml-dark">
+
+    <div class="ml-container">
+
+        <div class="ml-number">03</div>
+
+        <div class="ml-grid">
+
+            <div class="ml-title">
+
+                <p>MODELLING</p>
+
+                <h2>
+                    Compare interpretable
+                    and ensemble approaches.
+                </h2>
+
+            </div>
+
+            <div class="ml-content">
+
+                <p>
+                    I explored Logistic Regression and Random Forest
+                    as two different approaches to the classification
+                    problem.
+                </p>
+
+                <div class="model-cards">
+
+                    <div>
+                        <span>MODEL 01</span>
+
+                        <h3>
+                            Logistic Regression
+                        </h3>
+
+                        <p>
+                            A relatively simple and interpretable
+                            classification approach.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>MODEL 02</span>
+
+                        <h3>
+                            Random Forest
+                        </h3>
+
+                        <p>
+                            An ensemble method capable of modelling
+                            nonlinear relationships and interactions.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="ml-section">
+
+    <div class="ml-container">
+
+        <div class="ml-number">04</div>
+
+        <div class="ml-grid">
+
+            <div class="ml-title">
+
+                <p>RESULT</p>
+
+                <h2>
+                    Random Forest reached
+                    74.7% accuracy.
+                </h2>
+
+            </div>
+
+            <div class="ml-content">
+
+                <div class="big-result">
+                    <span>RANDOM FOREST ACCURACY</span>
+                    <strong>0.7468</strong>
+                </div>
+
+                <p>
+                    On the test set, the Random Forest model achieved
+                    approximately 74.7% accuracy.
+                </p>
+
+                <p>
+                    Accuracy alone does not establish that a model is
+                    clinically useful. The result should be interpreted
+                    within the dataset, class distribution, evaluation
+                    design and intended use.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="ml-section ml-dark">
+
+    <div class="ml-container">
+
+        <div class="ml-number">05</div>
+
+        <div class="ml-grid">
+
+            <div class="ml-title">
+
+                <p>WHAT I LEARNED</p>
+
+                <h2>
+                    Model performance needs
+                    context.
+                </h2>
+
+            </div>
+
+            <div class="ml-content">
+
+                <p>
+                    This project strengthened my understanding of the
+                    end-to-end classification workflow: inspecting data,
+                    preparing features, splitting the dataset, training
+                    models and evaluating their predictions.
+                </p>
+
+                <p>
+                    It also reinforced that a single accuracy number
+                    should not be treated as proof that a model is ready
+                    for real-world clinical use.
+                </p>
+
+                <div class="learning-list">
+
+                    <div>
+                        <strong>01</strong>
+                        <span>Data quality affects model quality.</span>
+                    </div>
+
+                    <div>
+                        <strong>02</strong>
+                        <span>Different models capture different patterns.</span>
+                    </div>
+
+                    <div>
+                        <strong>03</strong>
+                        <span>Evaluation must match the intended decision.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="ml-next">
+
+    <div class="ml-container">
+
+        <p>NEXT</p>
+
+        <h2>
+            MediAssist Kenya
+        </h2>
+
+        <a href="mediassist.html">
+            View case study →
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <a href="index.html" class="logo">
+                PK<span>.</span>
+            </a>
+
+            <p>
+                AI Engineer building practical intelligent systems.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/purity-karwitha-9357a41b6">
+                LinkedIn
+            </a>
+
+            <a href="https://github.com/pkirimi">
+                GitHub
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 Purity Kirimi. Built with HTML & CSS.
+    </p>
+
+</footer>
+
+</body>
+</html>
