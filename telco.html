@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Telco Customer Churn | Purity Kirimi</title>
+
+    <meta
+        name="description"
+        content="Customer churn machine learning case study by Purity Kirimi."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="telco.css">
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            PK<span>.</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <a href="contact.html" class="nav-cta">
+            Let's talk
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+<section class="churn-hero">
+
+    <div class="churn-container">
+
+        <div class="churn-eyebrow">
+            MACHINE LEARNING
+            <span>•</span>
+            CUSTOMER ANALYTICS
+            <span>•</span>
+            BUSINESS
+        </div>
+
+        <h1>
+            Customer<br>
+            Churn
+        </h1>
+
+        <h2>
+            Using customer data to explore who may be at risk of leaving.
+        </h2>
+
+        <p class="churn-lead">
+            A supervised machine learning project focused on customer
+            churn as a business decision problem: identify patterns
+            associated with customers who leave and create a basis for
+            targeted retention analysis.
+        </p>
+
+        <div class="churn-meta">
+
+            <div>
+                <span>BUSINESS QUESTION</span>
+                <strong>Who is likely to churn?</strong>
+            </div>
+
+            <div>
+                <span>PROBLEM</span>
+                <strong>Binary Classification</strong>
+            </div>
+
+            <div>
+                <span>DATA</span>
+                <strong>Telco Customer Churn</strong>
+            </div>
+
+            <div>
+                <span>USE CASE</span>
+                <strong>Retention decision support</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="churn-section churn-dark">
+
+    <div class="churn-container">
+
+        <div class="churn-number">01</div>
+
+        <div class="churn-grid">
+
+            <div class="churn-title">
+
+                <p>THE BUSINESS PROBLEM</p>
+
+                <h2>
+                    Losing customers
+                    is expensive.
+                </h2>
+
+            </div>
+
+            <div class="churn-content">
+
+                <p>
+                    Customer churn is not only a prediction problem.
+                    It is a resource allocation problem.
+                </p>
+
+                <p>
+                    A business cannot intervene with every customer
+                    equally. A useful predictive system should help
+                    identify customers who may need attention so that
+                    retention teams can decide where intervention
+                    is worthwhile.
+                </p>
+
+                <div class="churn-callout">
+
+                    <span>DECISION</span>
+
+                    <strong>
+                        Which customers should receive retention
+                        attention first?
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="churn-section">
+
+    <div class="churn-container">
+
+        <div class="churn-number">02</div>
+
+        <div class="churn-grid">
+
+            <div class="churn-title">
+
+                <p>DATA EXPLORATION</p>
+
+                <h2>
+                    Understand customer
+                    behaviour first.
+                </h2>
+
+            </div>
+
+            <div class="churn-content">
+
+                <p>
+                    The dataset contains customer-level information
+                    describing account characteristics, services,
+                    contract information and billing behaviour.
+                </p>
+
+                <div class="churn-data">
+
+                    <div>
+                        <strong>Customer profile</strong>
+                        <span>Demographic and account characteristics</span>
+                    </div>
+
+                    <div>
+                        <strong>Services</strong>
+                        <span>Products and services used by customers</span>
+                    </div>
+
+                    <div>
+                        <strong>Contract</strong>
+                        <span>Contract and tenure information</span>
+                    </div>
+
+                    <div>
+                        <strong>Billing</strong>
+                        <span>Payment and billing characteristics</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="churn-section churn-dark">
+
+    <div class="churn-container">
+
+        <div class="churn-number">03</div>
+
+        <div class="churn-grid">
+
+            <div class="churn-title">
+
+                <p>MODELLING APPROACH</p>
+
+                <h2>
+                    Predict risk,
+                    then interpret it.
+                </h2>
+
+            </div>
+
+            <div class="churn-content">
+
+                <p>
+                    I approached churn as a supervised classification
+                    problem. The objective is not simply to produce
+                    a churn label, but to understand which customer
+                    characteristics are associated with the prediction.
+                </p>
+
+                <div class="churn-process">
+
+                    <div>
+                        <span>01</span>
+                        <strong>Inspect data</strong>
+                    </div>
+
+                    <div>
+                        <span>02</span>
+                        <strong>Prepare features</strong>
+                    </div>
+
+                    <div>
+                        <span>03</span>
+                        <strong>Train classifier</strong>
+                    </div>
+
+                    <div>
+                        <span>04</span>
+                        <strong>Evaluate predictions</strong>
+                    </div>
+
+                    <div>
+                        <span>05</span>
+                        <strong>Interpret customer patterns</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="churn-section">
+
+    <div class="churn-container">
+
+        <div class="churn-number">04</div>
+
+        <div class="churn-grid">
+
+            <div class="churn-title">
+
+                <p>BUSINESS INTERPRETATION</p>
+
+                <h2>
+                    Prediction only matters
+                    if someone can act on it.
+                </h2>
+
+            </div>
+
+            <div class="churn-content">
+
+                <p>
+                    A churn model becomes more useful when its output
+                    connects to an operational decision.
+                </p>
+
+                <div class="decision-flow">
+
+                    <div>
+                        <span>MODEL</span>
+                        <strong>Churn probability</strong>
+                    </div>
+
+                    <div>
+                        <span>SEGMENT</span>
+                        <strong>Customers requiring attention</strong>
+                    </div>
+
+                    <div>
+                        <span>ACTION</span>
+                        <strong>Retention intervention</strong>
+                    </div>
+
+                    <div>
+                        <span>MEASURE</span>
+                        <strong>Retention outcome</strong>
+                    </div>
+
+                </div>
+
+                <p>
+                    This framing shifts the project away from simply
+                    asking whether the model is accurate and toward
+                    asking whether its predictions can improve a
+                    business process.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="churn-section churn-dark">
+
+    <div class="churn-container">
+
+        <div class="churn-number">05</div>
+
+        <div class="churn-grid">
+
+            <div class="churn-title">
+
+                <p>WHAT I LEARNED</p>
+
+                <h2>
+                    Machine learning
+                    should serve a decision.
+                </h2>
+
+            </div>
+
+            <div class="churn-content">
+
+                <p>
+                    This project helped connect technical machine
+                    learning work to a concrete business problem.
+                </p>
+
+                <p>
+                    The interesting question is not simply whether
+                    a customer will churn. It is what the business
+                    should do with that information.
+                </p>
+
+                <div class="churn-learning">
+
+                    <div>
+                        <strong>01</strong>
+                        <span>Define the business decision first.</span>
+                    </div>
+
+                    <div>
+                        <strong>02</strong>
+                        <span>Evaluate models using the right metrics.</span>
+                    </div>
+
+                    <div>
+                        <strong>03</strong>
+                        <span>Turn predictions into actionable segments.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="churn-next">
+
+    <div class="churn-container">
+
+        <p>NEXT</p>
+
+        <h2>
+            Back to projects
+        </h2>
+
+        <a href="projects.html">
+            View all projects →
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <a href="index.html" class="logo">
+                PK<span>.</span>
+            </a>
+
+            <p>
+                AI Engineer building practical intelligent systems.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="https://www.linkedin.com/in/purity-karwitha-9357a41b6">
+                LinkedIn
+            </a>
+
+            <a href="https://github.com/pkirimi">
+                GitHub
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
