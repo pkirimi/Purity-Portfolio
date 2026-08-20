@@ -1,0 +1,372 @@
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-page {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   ABOUT HERO
+========================================= */
+
+.about-hero {
+    width: min(1100px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 120px 0 100px;
+}
+
+.about-hero .eyebrow {
+    color: #6ea8ff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    margin-bottom: 24px;
+}
+
+.about-hero h1 {
+    max-width: 950px;
+    margin: 0;
+    color: #f5f7fb;
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+}
+
+.about-hero h1 span {
+    display: block;
+    color: #6ea8ff;
+}
+
+.about-hero p {
+    max-width: 680px;
+    margin-top: 35px;
+    color: #9da8ba;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   ABOUT CONTENT
+========================================= */
+
+.about-section {
+    width: min(1100px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 90px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.about-section h2 {
+    margin: 0 0 35px;
+    color: #f5f7fb;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.about-section p {
+    max-width: 750px;
+    color: #9da8ba;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   TWO COLUMN CONTENT
+========================================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.about-card {
+    padding: 38px;
+    min-height: 250px;
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.015)
+        );
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(110,168,255,0.45);
+}
+
+.about-card .number {
+    display: block;
+    margin-bottom: 45px;
+
+    color: #6ea8ff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.about-card h3 {
+    margin: 0 0 18px;
+
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.about-card p {
+    margin: 0;
+
+    color: #9da8ba;
+    font-size: 0.95rem;
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   PRODUCTS / SKILLS
+========================================= */
+
+.products-section {
+    width: min(1100px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 90px 0 120px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.products-section h2 {
+    margin: 0 0 45px;
+
+    color: #f5f7fb;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    padding: 42px;
+
+    min-height: 300px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    background:
+        rgba(255,255,255,0.02);
+}
+
+.product-card h3 {
+    margin: 0 0 25px;
+
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.product-card p {
+    margin: 0;
+
+    color: #9da8ba;
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   SKILLS / TAGS
+========================================= */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills span {
+    padding: 10px 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    color: #aeb8c8;
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================================
+   NEXT SECTION
+========================================= */
+
+.about-next {
+    width: 100%;
+
+    padding: 130px 24px 150px;
+
+    box-sizing: border-box;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    text-align: center;
+}
+
+.about-next .eyebrow {
+    margin-bottom: 30px;
+
+    color: #6ea8ff;
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+.about-next h2 {
+    max-width: 850px;
+
+    margin: 0 auto 45px;
+
+    color: #f5f7fb;
+
+    font-size: clamp(3rem, 7vw, 6rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+}
+
+.about-next a {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 16px 28px;
+
+    background: #6ea8ff;
+
+    color: #07101f;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.about-next a:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 760px) {
+
+    .about-hero {
+        width: calc(100% - 40px);
+        padding: 75px 0 70px;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(3rem, 14vw, 5rem);
+        line-height: 0.95;
+    }
+
+    .about-hero p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .about-section {
+        width: calc(100% - 40px);
+        padding: 65px 0;
+    }
+
+    .about-section h2 {
+        font-size: 2.4rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card {
+        min-height: auto;
+        padding: 28px;
+    }
+
+    .products-section {
+        width: calc(100% - 40px);
+        padding: 65px 0 85px;
+    }
+
+    .products-section h2 {
+        font-size: 2.8rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        min-height: auto;
+        padding: 28px;
+    }
+
+    .skills {
+        gap: 8px;
+    }
+
+    .skills span {
+        font-size: 0.78rem;
+        padding: 8px 11px;
+    }
+
+    .about-next {
+        padding: 90px 20px 110px;
+    }
+
+    .about-next h2 {
+        font-size: clamp(2.8rem, 13vw, 4.5rem);
+        line-height: 0.95;
+    }
+
+    .about-next a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
