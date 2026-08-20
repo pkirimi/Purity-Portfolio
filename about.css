@@ -2,229 +2,218 @@
    ABOUT PAGE
 ========================================= */
 
-.about-page {
+body {
+    overflow-x: hidden;
+}
+
+main {
     width: 100%;
-    overflow: hidden;
 }
 
 
 /* =========================================
-   ABOUT HERO
+   HERO
 ========================================= */
 
-.about-hero {
+.page-hero {
     width: min(1100px, calc(100% - 48px));
     margin: 0 auto;
     padding: 120px 0 100px;
+    box-sizing: border-box;
 }
 
-.about-hero .eyebrow {
+.page-hero .eyebrow {
+    margin: 0 0 28px;
+
     color: #6ea8ff;
+
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.18em;
-    margin-bottom: 24px;
 }
 
-.about-hero h1 {
+.page-hero h1 {
     max-width: 950px;
+
     margin: 0;
+
     color: #f5f7fb;
+
     font-size: clamp(3.5rem, 8vw, 7.5rem);
     line-height: 0.95;
     letter-spacing: -0.055em;
 }
 
-.about-hero h1 span {
-    display: block;
+.page-hero h1 span {
     color: #6ea8ff;
 }
 
-.about-hero p {
+.page-intro {
     max-width: 680px;
-    margin-top: 35px;
+
+    margin: 35px 0 0;
+
     color: #9da8ba;
+
     font-size: 1.05rem;
     line-height: 1.8;
 }
 
 
 /* =========================================
-   ABOUT CONTENT
+   CONTENT SECTIONS
 ========================================= */
 
-.about-section {
+.content-section {
     width: min(1100px, calc(100% - 48px));
     margin: 0 auto;
+
     padding: 90px 0;
+
     border-top: 1px solid rgba(255,255,255,0.08);
+
+    box-sizing: border-box;
 }
 
-.about-section h2 {
-    margin: 0 0 35px;
+.section-label {
+    margin-bottom: 55px;
+
+    color: #9da8ba;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.section-label span {
+    margin-right: 15px;
+
+    color: #6ea8ff;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   TWO COLUMN SECTIONS
+========================================= */
+
+.two-column {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 80px;
+
+    width: 100%;
+}
+
+.two-column > div {
+    min-width: 0;
+}
+
+.two-column h2 {
+    max-width: 520px;
+
+    margin: 0;
+
     color: #f5f7fb;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 1;
+
+    font-size: clamp(2rem, 4vw, 3.6rem);
+    line-height: 1.05;
+
     letter-spacing: -0.04em;
 }
 
-.about-section p {
-    max-width: 750px;
+.prose {
+    min-width: 0;
+}
+
+.prose p {
+    max-width: 620px;
+
+    margin: 0 0 24px;
+
     color: #9da8ba;
+
     font-size: 1rem;
-    line-height: 1.8;
+    line-height: 1.85;
+
+    overflow-wrap: break-word;
+}
+
+.prose p:last-child {
+    margin-bottom: 0;
 }
 
 
 /* =========================================
-   TWO COLUMN CONTENT
+   SKILLS
 ========================================= */
 
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-}
-
-
-/* =========================================
-   CARDS
-========================================= */
-
-.about-card {
-    padding: 38px;
-    min-height: 250px;
-    box-sizing: border-box;
-
-    border: 1px solid rgba(255,255,255,0.10);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.045),
-            rgba(255,255,255,0.015)
-        );
-
-    transition:
-        transform 0.25s ease,
-        border-color 0.25s ease;
-}
-
-.about-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(110,168,255,0.45);
-}
-
-.about-card .number {
-    display: block;
-    margin-bottom: 45px;
-
-    color: #6ea8ff;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-}
-
-.about-card h3 {
-    margin: 0 0 18px;
-
-    color: #ffffff;
-    font-size: 1.5rem;
-    line-height: 1.2;
-}
-
-.about-card p {
-    margin: 0;
-
-    color: #9da8ba;
-    font-size: 0.95rem;
-    line-height: 1.75;
-}
-
-
-/* =========================================
-   PRODUCTS / SKILLS
-========================================= */
-
-.products-section {
+.skills-section {
     width: min(1100px, calc(100% - 48px));
     margin: 0 auto;
+
     padding: 90px 0 120px;
+
     border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-.products-section h2 {
-    margin: 0 0 45px;
-
-    color: #f5f7fb;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    line-height: 1;
-    letter-spacing: -0.05em;
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-}
-
-.product-card {
-    padding: 42px;
-
-    min-height: 300px;
 
     box-sizing: border-box;
+}
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1px;
 
     border: 1px solid rgba(255,255,255,0.10);
 
-    background:
-        rgba(255,255,255,0.02);
+    background: rgba(255,255,255,0.10);
 }
 
-.product-card h3 {
+.skill-group {
+    min-width: 0;
+
+    min-height: 230px;
+
+    padding: 36px;
+
+    box-sizing: border-box;
+
+    background: #070b14;
+}
+
+.skill-group h3 {
     margin: 0 0 25px;
 
-    color: #ffffff;
-    font-size: 1.5rem;
+    color: #f5f7fb;
+
+    font-size: 1.4rem;
 }
 
-.product-card p {
+.skill-group p {
     margin: 0;
 
     color: #9da8ba;
 
     font-size: 1rem;
-
     line-height: 1.9;
+
+    overflow-wrap: break-word;
 }
 
 
 /* =========================================
-   SKILLS / TAGS
+   FINAL CTA
 ========================================= */
 
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.skills span {
-    padding: 10px 14px;
-
-    border: 1px solid rgba(255,255,255,0.10);
-
-    color: #aeb8c8;
-
-    font-size: 0.82rem;
-}
-
-
-/* =========================================
-   NEXT SECTION
-========================================= */
-
-.about-next {
+.final-cta {
     width: 100%;
 
     padding: 130px 24px 150px;
@@ -236,19 +225,17 @@
     text-align: center;
 }
 
-.about-next .eyebrow {
-    margin-bottom: 30px;
+.final-cta .eyebrow {
+    margin: 0 0 30px;
 
     color: #6ea8ff;
 
     font-size: 0.78rem;
-
     font-weight: 700;
-
     letter-spacing: 0.18em;
 }
 
-.about-next h2 {
+.final-cta h2 {
     max-width: 850px;
 
     margin: 0 auto 45px;
@@ -256,37 +243,18 @@
     color: #f5f7fb;
 
     font-size: clamp(3rem, 7vw, 6rem);
-
     line-height: 0.95;
 
     letter-spacing: -0.055em;
 }
 
-.about-next a {
+.final-cta .button {
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
-    padding: 16px 28px;
-
-    background: #6ea8ff;
-
-    color: #07101f;
-
     text-decoration: none;
-
-    font-weight: 700;
-
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
-}
-
-.about-next a:hover {
-    transform: translateY(-3px);
-    opacity: 0.9;
 }
 
 
@@ -296,77 +264,156 @@
 
 @media (max-width: 760px) {
 
-    .about-hero {
+    /* HERO */
+
+    .page-hero {
         width: calc(100% - 40px);
+
         padding: 75px 0 70px;
     }
 
-    .about-hero h1 {
-        font-size: clamp(3rem, 14vw, 5rem);
-        line-height: 0.95;
+    .page-hero h1 {
+        max-width: 100%;
+
+        font-size: clamp(3rem, 13vw, 5rem);
+
+        line-height: 0.96;
+
+        letter-spacing: -0.045em;
+
+        overflow-wrap: normal;
     }
 
-    .about-hero p {
+    .page-intro {
+        margin-top: 28px;
+
         font-size: 0.95rem;
-        line-height: 1.7;
+
+        line-height: 1.75;
     }
 
-    .about-section {
+
+    /* CONTENT */
+
+    .content-section {
         width: calc(100% - 40px);
+
         padding: 65px 0;
     }
 
-    .about-section h2 {
-        font-size: 2.4rem;
+    .section-label {
+        margin-bottom: 35px;
     }
 
-    .about-grid {
+
+    /* THIS FIXES YOUR BROKEN MOBILE LAYOUT */
+
+    .two-column {
         grid-template-columns: 1fr;
+
+        gap: 40px;
     }
 
-    .about-card {
-        min-height: auto;
-        padding: 28px;
+    .two-column h2 {
+        max-width: 100%;
+
+        font-size: 2.35rem;
+
+        line-height: 1.05;
     }
 
-    .products-section {
+    .prose {
+        width: 100%;
+    }
+
+    .prose p {
+        max-width: 100%;
+
+        font-size: 0.95rem;
+
+        line-height: 1.75;
+    }
+
+
+    /* SKILLS */
+
+    .skills-section {
         width: calc(100% - 40px);
+
         padding: 65px 0 85px;
     }
 
-    .products-section h2 {
-        font-size: 2.8rem;
-    }
-
-    .products-grid {
+    .skills-grid {
         grid-template-columns: 1fr;
     }
 
-    .product-card {
+    .skill-group {
         min-height: auto;
+
         padding: 28px;
     }
 
-    .skills {
-        gap: 8px;
+    .skill-group h3 {
+        margin-bottom: 18px;
     }
 
-    .skills span {
-        font-size: 0.78rem;
-        padding: 8px 11px;
+    .skill-group p {
+        font-size: 0.95rem;
+
+        line-height: 1.75;
     }
 
-    .about-next {
+
+    /* FINAL CTA */
+
+    .final-cta {
         padding: 90px 20px 110px;
     }
 
-    .about-next h2 {
-        font-size: clamp(2.8rem, 13vw, 4.5rem);
-        line-height: 0.95;
+    .final-cta h2 {
+        max-width: 100%;
+
+        font-size: clamp(2.8rem, 12vw, 4.5rem);
+
+        line-height: 0.96;
     }
 
-    .about-next a {
+    .final-cta .button {
         width: 100%;
+
         box-sizing: border-box;
     }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 420px) {
+
+    .page-hero {
+        width: calc(100% - 32px);
+    }
+
+    .content-section {
+        width: calc(100% - 32px);
+    }
+
+    .skills-section {
+        width: calc(100% - 32px);
+    }
+
+    .page-hero h1 {
+        font-size: 3.1rem;
+    }
+
+    .two-column h2 {
+        font-size: 2.1rem;
+    }
+
+    .skill-group {
+        padding: 24px;
+    }
+
 }
