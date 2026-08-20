@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Contact | Purity Kirimi</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contact.css">
 </head>
@@ -11,141 +13,308 @@
 <body>
 
 <header class="site-header">
+
     <nav class="navbar">
-        <a href="index.html" class="logo">PK<span>.</span></a>
+
+        <a href="index.html" class="logo">
+            PK<span>.</span>
+        </a>
 
         <div class="nav-links">
+
             <a href="index.html">Home</a>
+
             <a href="about.html">About</a>
+
             <a href="case-studies.html">Case Studies</a>
+
             <a href="projects.html">Projects</a>
+
             <a href="contact.html" class="active">Contact</a>
+
         </div>
 
-        <a href="contact.html" class="nav-cta">Let's talk</a>
+        <a href="contact.html" class="nav-cta">
+            Let's talk
+        </a>
+
     </nav>
+
 </header>
+
 
 <main>
 
-<section class="contact-hero">
+    <!-- CONTACT HERO -->
 
-    <p class="eyebrow">CONTACT</p>
+    <section class="contact-hero">
 
-    <h1>
-        Let's talk about
-        <span>what you're building.</span>
-    </h1>
-
-    <p>
-        I'm interested in AI engineering, machine learning,
-        AI products and opportunities where technology can
-        solve meaningful problems.
-    </p>
-
-</section>
-
-
-<section class="contact-grid">
-
-    <a href="mailto:purity.kirimi.k@gmail.com" class="contact-card" target="_blank"
-
-        <span>01</span>
-
-        <h2>Email Me</h2>
-
-        <p>
-            purity.kirimi.k@gmail.com
+        <p class="eyebrow">
+            CONTACT
         </p>
 
-        <strong>
-            Send an email →
-        </strong>
-
-    </a>
-
-
-    <a href="https://www.linkedin.com/in/purity-karwitha-9357a41b6"
-       target="_blank"
-       class="contact-card">
-
-        <span>02</span>
-
-        <h2>LinkedIn</h2>
+        <h1>
+            Let's talk about
+            <span>what you're building.</span>
+        </h1>
 
         <p>
-            Connect with me professionally.
+            I'm interested in AI engineering, machine learning,
+            AI products and opportunities where technology can
+            solve meaningful problems.
         </p>
 
-        <strong>
-            View LinkedIn →
-        </strong>
-
-    </a>
+    </section>
 
 
-    <a href="https://github.com/pkirimi"
-       target="_blank"
-       class="contact-card">
+    <!-- CONTACT AREA -->
 
-        <span>03</span>
-
-        <h2>GitHub</h2>
-
-        <p>
-            Explore my code and technical projects.
-        </p>
-
-        <strong>
-            View GitHub →
-        </strong>
-
-    </a>
+    <section class="contact-grid">
 
 
-    <div class="contact-card">
-        <a href="CV/Purity-Kirimi-CV.pdf" target="_blank" rel="noopener">
+        <!-- 01 CONTACT FORM -->
 
-        <span>04</span>
+        <div class="contact-card contact-form-card">
 
-        <h2>CV</h2>
+            <span class="card-number">
+                01
+            </span>
 
-        <p>
-            Download or view my current CV.
-        </p>
+            <h2>
+                Send me a message
+            </h2>
 
-        <strong>
-            Download CV →
-        </strong>
-       </a>
-    </div>
+            <p class="card-description">
+                Have a project, opportunity or idea you'd like
+                to discuss? Send me a message.
+            </p>
 
-</section>
+
+            <form
+                action="https://formspree.io/f/xzepylnb"
+                method="POST"
+                class="contact-form"
+            >
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        placeholder="Tell me what you'd like to discuss..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Helps identify the purpose of the submission -->
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Portfolio Contact"
+                >
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Send message
+                    <span>→</span>
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- 02 LINKEDIN -->
+
+        <a
+            href="https://www.linkedin.com/in/purity-karwitha-9357a41b6"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card contact-link-card"
+        >
+
+            <span class="card-number">
+                02
+            </span>
+
+            <h2>
+                LinkedIn
+            </h2>
+
+            <p>
+                Connect with me professionally and follow
+                what I'm building in AI and technology.
+            </p>
+
+            <strong>
+                View LinkedIn →
+            </strong>
+
+        </a>
+
+
+        <!-- 03 GITHUB -->
+
+        <a
+            href="https://github.com/pkirimi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card contact-link-card"
+        >
+
+            <span class="card-number">
+                03
+            </span>
+
+            <h2>
+                GitHub
+            </h2>
+
+            <p>
+                Explore my code, machine-learning work and
+                AI product projects.
+            </p>
+
+            <strong>
+                View GitHub →
+            </strong>
+
+        </a>
+
+
+        <!-- 04 CV -->
+
+        <a
+            href="CV/Purity-Kirimi-CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card contact-link-card"
+        >
+
+            <span class="card-number">
+                04
+            </span>
+
+            <h2>
+                CV
+            </h2>
+
+            <p>
+                View my current AI Product Engineer CV and
+                professional background.
+            </p>
+
+            <strong>
+                View CV →
+            </strong>
+
+        </a>
+
+
+    </section>
 
 </main>
+
+
+<!-- FOOTER -->
 
 <footer>
 
     <div class="footer-content">
 
+
         <div>
-            <a href="index.html" class="logo">PK<span>.</span></a>
-            <p>AI Engineer building practical intelligent systems.</p>
+
+            <a href="index.html" class="logo">
+                PK<span>.</span>
+            </a>
+
+            <p>
+                AI Product Engineer building practical
+                intelligent systems.
+            </p>
+
         </div>
 
+
         <div class="footer-links">
-            <a href="https://www.linkedin.com/in/purity-karwitha-9357a41b6" target="_blank">LinkedIn</a>
-            <a href="https://github.com/pkirimi" target="_blank">GitHub</a>
-            <a href="mailto:purity.kirimi.k@gmail.com">purity.kirimi.k@gmail.com</a>
+
+            <a
+                href="https://www.linkedin.com/in/purity-karwitha-9357a41b6"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+            <a
+                href="https://github.com/pkirimi"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
+
+            <a href="mailto:purity.kirimi.k@gmail.com">
+                purity.kirimi.k@gmail.com
+            </a>
+
         </div>
 
     </div>
+
 
     <p class="copyright">
         © 2026 Purity Kirimi. Built with HTML & CSS.
     </p>
 
 </footer>
+
 
 </body>
 </html>
