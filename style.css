@@ -38,6 +38,27 @@ a {
 }
 
 
+/* SKIP LINK */
+
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 20px;
+    z-index: 200;
+    background: var(--blue);
+    color: var(--bg);
+    padding: 10px 18px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 20px;
+}
+
+
 /* HEADER */
 
 .site-header {
@@ -260,6 +281,18 @@ main {
     color: var(--muted);
 }
 
+.hero-bg-image {
+    position: absolute;
+    inset: -40px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    filter: saturate(1.1);
+    z-index: 0;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 75%);
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 75%);
+}
+
 .orb {
     position: absolute;
     border-radius: 50%;
@@ -346,6 +379,8 @@ main {
     display: flex;
     flex-direction: column;
     transition: 0.25s;
+    overflow: hidden;
+    position: relative;
 }
 
 .work-card:hover {
@@ -354,15 +389,45 @@ main {
     transform: translateY(-4px);
 }
 
+.work-card:hover .work-thumb {
+    transform: scale(1.04);
+}
+
 .work-card.featured {
     grid-column: span 2;
     min-height: 350px;
+}
+
+.work-thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    transition: transform 0.4s ease, opacity 0.25s ease;
+    mask-image: linear-gradient(to left, black 35%, transparent 90%);
+    -webkit-mask-image: linear-gradient(to left, black 35%, transparent 90%);
+    pointer-events: none;
+}
+
+.work-card.featured .work-thumb {
+    width: 42%;
 }
 
 .work-number {
     color: var(--blue);
     font-family: "Courier New", monospace;
     margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.work-content {
+    position: relative;
+    z-index: 1;
 }
 
 .work-content {
