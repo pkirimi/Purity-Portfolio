@@ -27,7 +27,30 @@ main {
 /* HERO */
 
 .fly-hero {
+    position: relative;
     padding: 135px 0 100px;
+}
+
+.fly-hero::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -10%;
+    width: 60%;
+    height: 480px;
+    background-image: url('https://d8j0ntlcm91z4.cloudfront.net/user_3E4Qc42rgJA22dBGSmIKr0z6BT1/hf_20260902_141254_2fcabe67-8af0-486a-8585-0c144b6f8ec4.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    z-index: 0;
+    mask-image: radial-gradient(circle at 65% 40%, black 0%, transparent 65%);
+    -webkit-mask-image: radial-gradient(circle at 65% 40%, black 0%, transparent 65%);
+    pointer-events: none;
+}
+
+.fly-hero .fly-container {
+    position: relative;
+    z-index: 1;
 }
 
 .fly-eyebrow {
@@ -472,6 +495,12 @@ code {
 /* MOBILE */
 
 @media (max-width: 900px) {
+
+    .fly-hero::before {
+        width: 80%;
+        height: 320px;
+        opacity: 0.22;
+    }
 
     .fly-meta {
         grid-template-columns: 1fr 1fr;

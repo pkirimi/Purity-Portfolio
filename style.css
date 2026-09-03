@@ -26,10 +26,15 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
+}
+
+h1, h2, h3, h4,
+.logo, .hero-buttons .button, .nav-cta {
+    font-family: "Space Grotesk", "Inter", Arial, sans-serif;
 }
 
 a {
@@ -114,6 +119,55 @@ a {
 
 .nav-cta:hover {
     border-color: var(--blue);
+}
+
+.nav-toggle {
+    display: none;
+    width: 34px;
+    height: 34px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    height: 2px;
+    background: var(--text);
+    transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease;
+}
+
+.nav-toggle span {
+    top: 16px;
+}
+
+.nav-toggle span::before {
+    content: "";
+    top: -8px;
+}
+
+.nav-toggle span::after {
+    content: "";
+    top: 8px;
+}
+
+.site-header.nav-open .nav-toggle span {
+    background: transparent;
+}
+
+.site-header.nav-open .nav-toggle span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.site-header.nav-open .nav-toggle span::after {
+    top: 0;
+    transform: rotate(-45deg);
 }
 
 
@@ -600,29 +654,57 @@ footer {
     .capabilities-grid {
         grid-template-columns: 1fr 1fr;
     }
+
+    .capability {
+        min-height: 200px;
+        padding: 25px;
+    }
+
+    .capability h3 {
+        margin: 35px 0 12px;
+    }
 }
 
 
 @media (max-width: 650px) {
 
     .navbar {
-        flex-wrap: wrap;
-        gap: 20px;
+        padding: 16px 20px;
+        position: relative;
     }
 
-    .nav-links {
-        order: 3;
-        width: 100%;
-        justify-content: space-between;
-        gap: 10px;
-    }
-
-    .nav-links a {
-        font-size: 0.75rem;
+    .nav-toggle {
+        display: block;
+        order: 2;
     }
 
     .nav-cta {
         display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: var(--bg-light);
+        border-bottom: 1px solid var(--border);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .site-header.nav-open .nav-links {
+        max-height: 400px;
+    }
+
+    .nav-links a {
+        padding: 16px 20px;
+        border-top: 1px solid var(--border);
+        font-size: 0.95rem;
+        width: 100%;
     }
 
     .hero {
@@ -646,8 +728,28 @@ footer {
         grid-column: span 1;
     }
 
+    .work-thumb {
+        width: 100%;
+        opacity: 0.18;
+        mask-image: linear-gradient(to top, black 0%, transparent 65%);
+        -webkit-mask-image: linear-gradient(to top, black 0%, transparent 65%);
+    }
+
+    .work-card.featured .work-thumb {
+        width: 100%;
+    }
+
     .capabilities-grid {
         grid-template-columns: 1fr;
+    }
+
+    .capability {
+        min-height: auto;
+        padding: 22px;
+    }
+
+    .capability h3 {
+        margin: 25px 0 10px;
     }
 
     .section-heading {
@@ -838,7 +940,38 @@ footer {
     display: flex;
     flex-direction: column;
 
+    position: relative;
+    overflow: hidden;
+
     transition: 0.25s ease;
+}
+
+.project-thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.45;
+    transition: transform 0.4s ease;
+    mask-image: linear-gradient(to left, black 30%, transparent 90%);
+    -webkit-mask-image: linear-gradient(to left, black 30%, transparent 90%);
+    pointer-events: none;
+}
+
+.project-card:hover .project-thumb {
+    transform: scale(1.04);
+}
+
+.project-top,
+.project-card h2,
+.project-card > p,
+.project-card .tags,
+.project-card .text-link {
+    position: relative;
+    z-index: 1;
 }
 
 .project-card:hover {
@@ -917,6 +1050,13 @@ footer {
 
     .project-card {
         min-height: 350px;
+    }
+
+    .project-thumb {
+        width: 100%;
+        opacity: 0.16;
+        mask-image: linear-gradient(to top, black 0%, transparent 65%);
+        -webkit-mask-image: linear-gradient(to top, black 0%, transparent 65%);
     }
 }
 

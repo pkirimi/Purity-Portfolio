@@ -12,6 +12,7 @@
 body {
     background: var(--ml-bg);
     color: var(--ml-text);
+    overflow-x: hidden;
 }
 
 .ml-container {
@@ -20,7 +21,30 @@ body {
 }
 
 .ml-hero {
+    position: relative;
     padding: 135px 0 100px;
+}
+
+.ml-hero::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -10%;
+    width: 60%;
+    height: 480px;
+    background-image: url('https://d8j0ntlcm91z4.cloudfront.net/user_3E4Qc42rgJA22dBGSmIKr0z6BT1/hf_20260902_141253_b492878e-f806-4ca5-a02b-75c6d16d89ee.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    z-index: 0;
+    mask-image: radial-gradient(circle at 65% 40%, black 0%, transparent 65%);
+    -webkit-mask-image: radial-gradient(circle at 65% 40%, black 0%, transparent 65%);
+    pointer-events: none;
+}
+
+.ml-hero .ml-container {
+    position: relative;
+    z-index: 1;
 }
 
 .ml-eyebrow {
@@ -286,6 +310,12 @@ body {
 }
 
 @media (max-width: 900px) {
+
+    .ml-hero::before {
+        width: 80%;
+        height: 320px;
+        opacity: 0.22;
+    }
 
     .ml-meta {
         grid-template-columns: 1fr 1fr;
