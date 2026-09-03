@@ -6,9 +6,32 @@
 /* CONTACT HERO */
 
 .contact-hero {
+    position: relative;
     max-width: 900px;
     margin: 0 auto;
     padding: 120px 24px 80px;
+}
+
+.contact-hero::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -8%;
+    width: 45%;
+    height: 360px;
+    background-image: url('https://d8j0ntlcm91z4.cloudfront.net/user_3E4Qc42rgJA22dBGSmIKr0z6BT1/hf_20260902_141254_2fcabe67-8af0-486a-8585-0c144b6f8ec4.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.22;
+    z-index: 0;
+    mask-image: radial-gradient(circle at 70% 40%, black 0%, transparent 65%);
+    -webkit-mask-image: radial-gradient(circle at 70% 40%, black 0%, transparent 65%);
+    pointer-events: none;
+}
+
+.contact-hero > * {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -428,6 +451,12 @@ footer {
         padding:
             80px 20px
             60px;
+    }
+
+    .contact-hero::before {
+        width: 65%;
+        height: 240px;
+        opacity: 0.14;
     }
 
 

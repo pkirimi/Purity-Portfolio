@@ -38,6 +38,7 @@
 body {
     background: var(--ai-bg);
     color: var(--ai-text);
+    overflow-x: hidden;
 }
 
 .ai-container {
@@ -46,7 +47,30 @@ body {
 }
 
 .ai-hero {
+    position: relative;
     padding: 135px 0 100px;
+}
+
+.ai-hero::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -10%;
+    width: 60%;
+    height: 480px;
+    background-image: url('https://d8j0ntlcm91z4.cloudfront.net/user_3E4Qc42rgJA22dBGSmIKr0z6BT1/hf_20260902_141253_c9a276c1-1107-4b8b-91e2-895a897d0ae5.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 0;
+    mask-image: radial-gradient(circle at 65% 40%, black 0%, transparent 65%);
+    -webkit-mask-image: radial-gradient(circle at 65% 40%, black 0%, transparent 65%);
+    pointer-events: none;
+}
+
+.ai-hero .ai-container {
+    position: relative;
+    z-index: 1;
 }
 
 .ai-eyebrow {
@@ -288,6 +312,12 @@ body {
 }
 
 @media (max-width: 900px) {
+
+    .ai-hero::before {
+        width: 80%;
+        height: 320px;
+        opacity: 0.2;
+    }
 
     .ai-meta {
         grid-template-columns: 1fr 1fr;
